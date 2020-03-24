@@ -1,11 +1,11 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Select from './Select';
 
 describe('<Select /> with default props', () => {
     const defaultProps = {
         allOptions: ['a', 'b'],
-        label: 'Tags',
+        label: 'Tags'
     };
     const wrapper = shallow(<Select {...defaultProps} />);
     it('renders as expected', () => {

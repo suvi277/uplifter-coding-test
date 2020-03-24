@@ -1,12 +1,12 @@
-import { getPhotos, getPhotosSuccess, getPhotosFailure } from './photos.action';
 import { actions } from '../../constants/action.types';
-import { Photo } from 'src/types/Photo';
+import { Photo } from '../../types/Photo';
+import { getPhotos, getPhotosSuccess, getPhotosFailure } from './photos.action';
 
 describe('Photos Actions', () => {
     const { GET, SUCCESS, FAILURE } = actions.PHOTOS;
     it(`getPhotos should return ${GET} action`, () => {
         expect(getPhotos()).toEqual({
-            type: GET,
+            type: GET
         });
     });
 
@@ -16,17 +16,17 @@ describe('Photos Actions', () => {
                 title: 'sample title',
                 ownername: 'sample owner name',
                 description: {
-                    _content: 'some content',
+                    _content: 'some content'
                 },
                 url_q: 'url/path',
                 owner: 'sampleowner',
                 id: 'some id',
-                tags: 'tag1 tag2',
-            },
+                tags: 'tag1 tag2'
+            }
         ];
         expect(getPhotosSuccess(mockData)).toEqual({
             type: SUCCESS,
-            payload: mockData,
+            payload: mockData
         });
     });
 
@@ -34,8 +34,8 @@ describe('Photos Actions', () => {
         expect(getPhotosFailure({ errorMessage: [] })).toEqual({
             type: FAILURE,
             payload: {
-                errorMessage: [],
-            },
+                errorMessage: []
+            }
         });
     });
 });

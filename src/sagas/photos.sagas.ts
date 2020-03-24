@@ -4,6 +4,10 @@ import { getPhotosSuccess, getPhotosFailure } from '../actions/photos/photos.act
 import { API_ROOT, params } from '../constants/endpoint';
 import { actions } from '../constants/action.types';
 
+function getData() {
+    return axios.get(API_ROOT, { params });
+}
+
 function* getPhotosSaga() {
     try {
         const response = yield call(getData);
@@ -15,8 +19,4 @@ function* getPhotosSaga() {
 
 export default function* photosSagas() {
     yield takeEvery(actions.PHOTOS.GET, getPhotosSaga);
-}
-
-function getData() {
-    return axios.get(API_ROOT, { params });
 }

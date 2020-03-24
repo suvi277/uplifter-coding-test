@@ -33,7 +33,7 @@ const PhotoCard: React.FC<Photo> = ({ title, ownername, description, url_q, owne
                     <div
                         className="block-with-text"
                         dangerouslySetInnerHTML={{
-                            __html: description._content,
+                            __html: description._content
                         }}
                     />
                 )}

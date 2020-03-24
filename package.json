@@ -27,17 +27,14 @@
         "redux-saga": "^1.1.3",
         "typescript": "~3.7.2"
     },
-    "proxy": "https://api.flickr.com/services/feeds/photos_public.gne",
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "linting": "yarn lint:ts && yarn lint:style",
+        "linting": "yarn lint:ts",
         "lint:ts": "eslint 'src/**/*.ts?(x)'",
         "lint:ts:fix": "eslint --fix 'src/**/*.ts?(x)'",
-        "lint:style": "stylelint 'src/**/*.ts?(x)'",
-        "lint:style:fix": "stylelint 'src/**/*.ts?(x)' --fix",
         "predeploy": "yarn linting && yarn build",
         "deploy": "gh-pages -d build"
     },

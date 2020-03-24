@@ -1,9 +1,9 @@
 import { actions } from '../../constants/action.types';
-import { PhotoCollection, Photo, BaseAction } from '../../types/Photo';
+import { PhotoCollection, Photo } from '../../types/Photo';
 import { photoCollectionReducer, initialState } from './photos.reducer';
 
 describe('app/reducers/robot', () => {
-    let state: PhotoCollection<Photo> = initialState;
+    const state: PhotoCollection<Photo> = initialState;
     const { GET, SUCCESS, FAILURE } = actions.PHOTOS;
 
     describe(`${GET} action`, () => {
@@ -12,8 +12,8 @@ describe('app/reducers/robot', () => {
         test('should set the status to loading', () => {
             expect(
                 photoCollectionReducer(state, {
-                    type: GET,
-                }),
+                    type: GET
+                })
             ).toEqual(expectedState);
         });
     });
@@ -24,13 +24,13 @@ describe('app/reducers/robot', () => {
                 title: 'sample title',
                 ownername: 'sample owner name',
                 description: {
-                    _content: 'some content',
+                    _content: 'some content'
                 },
                 url_q: 'url/path',
                 owner: 'sampleowner',
                 id: 'some id',
-                tags: 'tag1 tag2',
-            },
+                tags: 'tag1 tag2'
+            }
         ];
 
         const expectedState = { status: 'loaded', photos: mockData };
@@ -39,7 +39,7 @@ describe('app/reducers/robot', () => {
         beforeEach(() => {
             reducerWithSuccessType = photoCollectionReducer(state, {
                 type: SUCCESS,
-                payload: mockData,
+                payload: mockData
             });
         });
 
@@ -60,7 +60,7 @@ describe('app/reducers/robot', () => {
         beforeEach(() => {
             reducerWithFailureType = photoCollectionReducer(state, {
                 type: FAILURE,
-                payload: mockError,
+                payload: mockError
             });
         });
 

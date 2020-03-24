@@ -30,6 +30,7 @@
         "import/no-unresolved": "error",
         "import/order": "error",
         "import/named": "off",
+        "@typescript-eslint/camelcase": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-explicit-any": ["off"],
         "@typescript-eslint/explicit-member-accessibility": "off",
@@ -43,7 +44,6 @@
             "error",
             {
                 "singleQuote": true,
-                "printWidth": 100,
                 "semi": true
             }
         ]
@@ -64,7 +64,9 @@
             "@typescript-eslint/parser": [".ts", ".tsx"]
         },
         "import/resolver": {
-            "typescript": {}
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
         }
     }
 }

@@ -9,5 +9,5 @@ export const params = {
     safe_search: 1,
     extras: 'description, owner_name, tags, url_q',
     page: 1,
-    per_page: 40,
+    per_page: 40
 };

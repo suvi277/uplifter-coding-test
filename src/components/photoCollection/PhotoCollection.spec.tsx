@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import PhotoCollection from './PhotoCollection';
 import Loader from '../loader/Loader';
 import PhotoCard from '../photoCard/PhotoCard';
+import PhotoCollection from './PhotoCollection';
 
 describe('<PhotoCollection /> with default props', () => {
     const defaultProps = {
         status: 'loading',
-        getPhotos: jest.fn(),
+        getPhotos: jest.fn()
     };
     const wrapper = shallow(<PhotoCollection {...defaultProps} />);
     it('renders as expected', () => {
@@ -23,7 +23,7 @@ describe('<PhotoCollection /> with default props', () => {
             return <div />;
         };
 
-        const wrapper = mount(<Comp />);
+        mount(<Comp />);
 
         it('should call the `getPhotos` when mounted ', () => {
             expect(defaultProps.getPhotos).toHaveBeenCalled();
@@ -35,17 +35,17 @@ describe('<PhotoCollection /> with default props', () => {
             title: 'sample title',
             ownername: 'sample owner name',
             description: {
-                _content: 'some content',
+                _content: 'some content'
             },
             url_q: 'url/path',
             owner: 'sampleowner',
             id: 'some id',
-            tags: '',
+            tags: ''
         };
         const defaultProps = {
             status: 'loaded',
             photos: [eachPhoto],
-            getPhotos: jest.fn(),
+            getPhotos: jest.fn()
         };
         const wrapper = shallow(<PhotoCollection {...defaultProps} />);
 
@@ -60,7 +60,7 @@ describe('<PhotoCollection /> with default props', () => {
     describe('<PhotoCollection /> with error props', () => {
         const defaultProps = {
             status: 'error',
-            getPhotos: jest.fn(),
+            getPhotos: jest.fn()
         };
         const wrapper = shallow(<PhotoCollection {...defaultProps} />);
         it('should render Loader as status is loading', () => {

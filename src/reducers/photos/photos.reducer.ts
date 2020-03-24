@@ -2,7 +2,7 @@ import { actions } from '../../constants/action.types';
 import { PhotoCollection, Photo, BaseAction } from '../../types/Photo';
 
 export const initialState = {
-    status: 'init',
+    status: 'init'
 };
 export const photoCollectionReducer = (state: PhotoCollection<Photo> = initialState, action: BaseAction) => {
     switch (action.type) {
@@ -12,7 +12,7 @@ export const photoCollectionReducer = (state: PhotoCollection<Photo> = initialSt
             return {
                 ...state,
                 photos: action.payload,
-                status: 'loaded',
+                status: 'loaded'
             };
         case actions.PHOTOS.FAILURE:
             return { ...state, error: action.payload, status: 'error' };

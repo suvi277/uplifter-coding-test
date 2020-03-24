@@ -1,20 +1,20 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import PhotoCard from './PhotoCard';
-import { Photo } from 'src/types/Photo';
+import { Photo } from '../../types/Photo';
 import Select from '../select/Select';
+import PhotoCard from './PhotoCard';
 
 describe('<PhotoCard /> with default props', () => {
     const defaultProps = {
         title: 'sample title',
         ownername: 'sample owner name',
         description: {
-            _content: 'some content',
+            _content: 'some content'
         },
         url_q: 'url/path',
         owner: 'sampleowner',
         id: 'some id',
-        tags: '',
+        tags: ''
     };
     const wrapper = shallow(<PhotoCard {...defaultProps} />);
     it('renders as expected', () => {
@@ -27,7 +27,7 @@ describe('<PhotoCard /> with default props', () => {
     it('should insert the prop values to correct places ', () => {
         const props: Photo = {
                 ...defaultProps,
-                tags: 'tag1 tag2',
+                tags: 'tag1 tag2'
             },
             photoCardComp = mount(<PhotoCard {...props} />);
 
@@ -39,7 +39,7 @@ describe('<PhotoCard /> with default props', () => {
     it('should call the Select component when tags are empty ', () => {
         const props: Photo = {
                 ...defaultProps,
-                tags: '',
+                tags: ''
             },
             photoCardComp = shallow(<PhotoCard {...props} />);
 
@@ -49,7 +49,7 @@ describe('<PhotoCard /> with default props', () => {
     describe('when tags are not empty ', () => {
         const props: Photo = {
             ...defaultProps,
-            tags: 'tag1 tag2',
+            tags: 'tag1 tag2'
         };
         let photoCardComp: any, expectedtags: any;
         beforeEach(() => {
