@@ -1,26 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import './_shared/styles/main.scss';
+import { PhotoCollectionContainer } from './containers/PhotoCollection';
+import PageHeading from './components/pageHeading/PageHeading';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+    return (
+        <Fragment>
+            <PageHeading title="Rendered Markup from Flickr API" />
+            <PhotoCollectionContainer />
+        </Fragment>
+    );
+};
 
 export default App;
