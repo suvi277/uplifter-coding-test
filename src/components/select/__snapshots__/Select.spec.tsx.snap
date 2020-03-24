@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PhotoCollection /> with default props renders as expected 1`] = `ShallowWrapper {}`;
+
+exports[`<Select /> with default props renders as expected 1`] = `ShallowWrapper {}`;

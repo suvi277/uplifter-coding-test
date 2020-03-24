@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PhotoCollection /> with default props renders as expected 1`] = `ShallowWrapper {}`;
+
+exports[`<PhotoCollection /> with error props renders as expected 1`] = `ShallowWrapper {}`;
+
+exports[`Photo Collection Component renders as expected 1`] = `ShallowWrapper {}`;
+
+exports[`StreamCard Component renders as expected 1`] = `ShallowWrapper {}`;
